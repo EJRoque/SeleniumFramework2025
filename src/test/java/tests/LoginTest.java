@@ -38,11 +38,12 @@ public class LoginTest extends BaseTest {
 		};
 	}
 	
-	@Test(dataProvider = "LoginData2")
-	public void testValidLogin(String username, String password) {
+	//@Test(dataProvider = "LoginData2")
+	@Test
+	public void testValidLogin() { //String username, String password
 
 		Log.info("Starting login test...");
-		test = ExtentReportManager.createTet("Login Test - " + username);
+		test = ExtentReportManager.createTet("Login Test - " ); //+ username
 
 		test.info("Navigating to URL");
 		LoginPage loginPage = new LoginPage(driver);
@@ -51,12 +52,12 @@ public class LoginTest extends BaseTest {
 		test.info("Adding credentials");
 		
 		//Hard coded data
-//		loginPage.enterUsername("admin@yourstore.com");
-//		loginPage.enterPassword("admin");
+		loginPage.enterUsername("admin@yourstore.com");
+		loginPage.enterPassword("admin");
 		
 		//Data from excel using test driven approach
-		loginPage.enterUsername(username);
-		loginPage.enterPassword(password);
+//		loginPage.enterUsername(username);
+//		loginPage.enterPassword(password);
 
 		test.info("Clicking on Login button");
 		loginPage.clickLogin();
