@@ -66,7 +66,7 @@ public class LoginTest extends BaseTest {
 
 		Log.info("Veryfing page title...");
 		test.info("Veryfing page title...");
-		Assert.assertEquals(driver.getTitle(), "Just a moment...ABCD");
+		Assert.assertEquals(driver.getTitle(), "Just a moment...");
 
 		Log.info("Login test completed.");
 		test.pass("Login Successfull");
